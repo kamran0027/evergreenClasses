@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Evergreen Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #495057;
+        }
+
+        .teacher-card img {
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .bg-lightblue {
+            background-color: #e8f4fd;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="/">Evergreen Classes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/result">Result</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/batches">Batches</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- About Section -->
+<section class="container mt-5">
+    <h2 class="text-center section-title">About Evergreen Classes</h2>
+    <p class="lead text-center">Empowering students from rural and urban areas to achieve academic excellence since 2017.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h4>🎯 Consistent Results</h4>
+            <p>Over the last 5 years, Evergreen Classes has consistently produced top results in board exams and competitive tests. Our dedication to individual attention and smart learning techniques has improved student performance year by year.</p>
+        </div>
+        <div class="col-md-6">
+            <h4>📈 Student Growth</h4>
+            <p>We focus not just on academics, but on total student development. Our students show significant progress in their confidence, problem-solving skills, and critical thinking.</p>
+        </div>
+    </div>
+
+    <div class="bg-lightblue p-4 rounded mt-4">
+        <p class="quote text-center">"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</p>
+        <p class="quote text-center">"Success doesn't come from what you do occasionally, it comes from what you do consistently."</p>
+    </div>
+
+    <h4 class="section-title">📝 We Teach</h4>
+    <p class="fs-5">Our coaching provides specialized education for:</p>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">✔️ Class 8th</li>
+        <li class="list-group-item">✔️ Class 9th</li>
+        <li class="list-group-item">✔️ Class 10th</li>
+        <li class="list-group-item">✔️ Class 11th (Science & Arts)</li>
+        <li class="list-group-item">✔️ Class 12th (Science & Arts)</li>
+    </ul>
+</section>
+
+<!-- Teachers Section -->
+<section class="container mt-5">
+    <h4 class="text-center section-title">👨‍🏫 Our Teachers</h4>
+    <div class="row text-center">
+        <div class="col-md-3 col-sm-6 mt-3">
+            <div class="card teacher-card p-3">
+                <img src="/images/faizan_sir.jpg" alt="Faizan Sir">
+                <h5 class="mt-2">Faizan Sir</h5>
+                <p>Chemstry,Biology & Social-Science</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mt-3">
+            <div class="card teacher-card p-3">
+                <img src="/images/aslam.jpg" alt="Aslam Sir">
+                <h5 class="mt-2">Aslam Sir</h5>
+                <p>Mathematics & Physics</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mt-3">
+            <div class="card teacher-card p-3">
+                <img src="/images/rehan.jpg" alt="Rehan Sir">
+                <h5 class="mt-2">Rehan Sir</h5>
+                <p>Englis,Hindi & Apptitude </p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mt-3">
+            <div class="card teacher-card p-3">
+                <img src="/images/wazirul.jpg" alt="Wazirul Sir">
+                <h5 class="mt-2">Wazirul Sir</h5>
+                <p>Physics</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2025 Evergreen Classes. All Rights Reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
