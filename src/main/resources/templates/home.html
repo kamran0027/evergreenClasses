@@ -14,7 +14,7 @@
 <!-- 🌐 Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}">
+        <a class="navbar-brand" th:href="@{/public}">
             <img src="/images/logo.jpg" alt="Evergreen Logo" width="40" height="40" class="d-inline-block align-text-top">
             Evergreen Classes
         </a>
@@ -24,11 +24,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/public">Home</a></li>
                 <li class="nav-item"><a class="nav-link" th:href="@{/result}">Result</a></li>
-                <li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
-                <li class="nav-item"><a class="nav-link" th:href="@{/batches}">Batches</a></li>
-                <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/public/about}">About</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/public/batches}">Batches</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/public/contact}">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" th:href="@{/admin}">Login</a></li>
             </ul>
         </div>
@@ -52,7 +52,7 @@
                 <p class="mb-1"><strong>Join Us:</strong> +91 7079534231</p>
             </div>
         </div>
-        <a href="/about" class="btn btn-success btn-lg mt-3">About us</a>
+        <a href="/public/about" class="btn btn-success btn-lg mt-3">About us</a>
     </div>
 </section>
 

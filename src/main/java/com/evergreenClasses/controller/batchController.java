@@ -16,7 +16,7 @@ public class batchController {
     @Autowired
     private BatchRepository batchRepository;
 
-    @GetMapping("/batches")
+    @GetMapping("/public/batches")
     public String showBatches(Model model){
         List<Batch> batches=batchRepository.findAll();
         model.addAttribute("batches", batches);
