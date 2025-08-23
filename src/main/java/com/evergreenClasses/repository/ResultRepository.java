@@ -11,5 +11,6 @@ public interface ResultRepository extends JpaRepository<Result,Long>{
     // List<Result> findByStudent_StudentClass(String studentClass);
     List<Result> findBySubjectName(String subjectName);
     List<Result> findByStudent_StudentClass(String studentClass);
+    List<Result> findByStudent_NameContainingIgnoreCase(String name );
 
 }

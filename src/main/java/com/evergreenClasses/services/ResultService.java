@@ -34,15 +34,13 @@ public class ResultService {
         
     }
 
-    public List<Result> getResultsBySubjectName(String subject){
-        return resultRepository.findBySubjectName(subject);
+    public List<Result> searchByStudentName(String name){
+        return resultRepository.findByStudent_NameContainingIgnoreCase(name);
     }
 
-    public List<Result> getResultByClassName (String cls){
-        return resultRepository.findByStudent_StudentClass(cls);
+    public List<Result> getAllResult(){
+        return resultRepository.findAll();
     }
-
-
 
     
 

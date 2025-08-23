@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.evergreenClasses.Dto.ResultForm;
+import com.evergreenClasses.repository.ResultRepository;
 import com.evergreenClasses.repository.StudentRepositry;
 import com.evergreenClasses.services.ResultService;
 
@@ -17,10 +19,16 @@ import com.evergreenClasses.services.ResultService;
 @RequestMapping("/admin")
 public class adminResultController {
 
+    private final ResultRepository resultRepository;
+
     @Autowired
     ResultService resultService;
     @Autowired
     StudentRepositry studentRepositry;
+
+    adminResultController(ResultRepository resultRepository) {
+        this.resultRepository = resultRepository;
+    }
 
     @GetMapping("/result")
     public String resultSection(){
@@ -40,8 +48,17 @@ public class adminResultController {
         return "redirect:/admin/result";
     }
 
-    // @PostMapping("/result/save"){
-    //     public String uploadResult(@PathVariable )
-    // }
+    @GetMapping("/result/show")
+    public String showResultList(Model model){
+        //model.addAttribute("results",resultService.searchByStudentName())
+        model.addAttribute("results", resultService.getAllResult());
+        return "view_result";
+    }
+
+    @GetMapping("/result/show/search")
+    public String searchResult(@RequestParam("keyword") String name, Model model){
+        model.addAttribute("results",resultService.searchByStudentName(name));
+        return "view_result";
+    }
 
 }
