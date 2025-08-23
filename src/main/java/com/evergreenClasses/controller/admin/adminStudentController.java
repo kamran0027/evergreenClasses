@@ -111,8 +111,6 @@ public class adminStudentController {
         if (result.isEmpty()) {
             result=studentRepositry.findByRollNoContainingIgnoreCase(keyword);
         }
-        
-
         model.addAttribute("students", result);
         return "student";
     }
