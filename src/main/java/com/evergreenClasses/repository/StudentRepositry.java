@@ -15,6 +15,7 @@ public interface StudentRepositry extends JpaRepository<Student,Long> {
 
     List<Student> findByNameContainingIgnoreCase(String Name);
     List<Student> findByRollNoContainingIgnoreCase(String RollNo);
+    //Optional<Student> findByRollNo(String RollNo);
     
 
 }

@@ -41,7 +41,8 @@ public class ResultService {
     public List<Result> getAllResult(){
         return resultRepository.findAll();
     }
-
-    
+    public List<Result> searchByStudentRollNo(String rollNo){
+        return resultRepository.findByStudent_RollNoContainingIgnoreCase(rollNo);
+    }
 
 }
