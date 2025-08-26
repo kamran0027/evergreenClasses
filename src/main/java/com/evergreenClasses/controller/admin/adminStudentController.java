@@ -109,7 +109,9 @@ public class adminStudentController {
     public String search(@RequestParam String keyword, Model model) {
         List<Student> result = studentRepositry.findByNameContainingIgnoreCase(keyword);
         if (result.isEmpty()) {
-            result=studentRepositry.findByRollNoContainingIgnoreCase(keyword);
+            //result=studentRepositry.findByRollNoContainingIgnoreCase(keyword).orElse(null);
+            model.addAttribute("students",studentRepositry.findByRollNoContainingIgnoreCase(keyword));
+            return "student";
         }
         model.addAttribute("students", result);
         return "student";

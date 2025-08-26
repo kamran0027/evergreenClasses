@@ -2,6 +2,7 @@ package com.evergreenClasses.repository;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -14,7 +15,7 @@ public interface StudentRepositry extends JpaRepository<Student,Long> {
     List<Student> findByBatch_BatchId(Long batchId);
 
     List<Student> findByNameContainingIgnoreCase(String Name);
-    List<Student> findByRollNoContainingIgnoreCase(String RollNo);
+    Optional<Student> findByRollNoIgnoreCase(String RollNo);
     //Optional<Student> findByRollNo(String RollNo);
     
 

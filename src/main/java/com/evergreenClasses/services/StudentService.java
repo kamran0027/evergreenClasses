@@ -1,7 +1,5 @@
 package com.evergreenClasses.services;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.evergreenClasses.model.Student;
@@ -16,8 +14,8 @@ public class StudentService {
         this.studentRepositry=studentRepositry;
     }
 
-    public List<Student> getStudentByRollNo(String rollNo){
-        return studentRepositry.findByRollNoContainingIgnoreCase(rollNo);
+    public Student getStudentByRollNo(String rollNo){
+        return studentRepositry.findByRollNoIgnoreCase(rollNo).orElse(null);
 
     }
 }
