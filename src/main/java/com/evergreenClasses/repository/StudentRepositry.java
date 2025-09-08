@@ -15,6 +15,7 @@ public interface StudentRepositry extends JpaRepository<Student,Long> {
     List<Student> findByBatch_BatchId(Long batchId);
 
     List<Student> findByNameContainingIgnoreCase(String Name);
+    List<Student> findByRollNoContainingIgnoreCase(String Name);
     Optional<Student> findByRollNoIgnoreCase(String RollNo);
     //Optional<Student> findByRollNo(String RollNo);
     

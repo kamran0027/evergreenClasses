@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,10 +56,24 @@ public class adminResultController {
         return "view_result";
     }
 
+    // @GetMapping("/result/show/edit/{id}")
+    // public String editResult(@PathVariable("id") Long id, Model model) {
+    //     model.addAttribute("result", resultRepository.findById(id).orElseThrow(null));
+    //     model.addAttribute("students", studentRepositry.findAll());
+    //     return "result_form";
+    // }
+
+    @GetMapping("/result/show/delete/{id}")
+    public String deleteResult(@PathVariable("id") Long id) {
+        resultRepository.deleteById(id);
+        return "redirect:/admin/result/show";
+    }
+
     @GetMapping("/result/show/search")
     public String searchResult(@RequestParam("keyword") String name, Model model){
         model.addAttribute("results",resultService.searchByStudentName(name));
         return "view_result";
     }
+
 
 }

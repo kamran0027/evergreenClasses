@@ -38,6 +38,8 @@
                     <th>Marks Obtained</th>
                     <th>Date</th>
                     <th>Father Name</th>
+                    <th>Action</th>
+                    
                     
                 </tr>
                 </thead>
@@ -52,6 +54,13 @@
                     <td th:text="${result.marksObtained}"></td>
                     <td th:text="${result.testDate}"></td>
                     <td th:text="${result.student.fatherName}"></td>
+                    <td>
+                        <div class="btn-group btn-group-sm btn-group-sm-stack" role="group">
+                            <!-- <a th:href="@{/admin/result/show/edit/{id}(id=${result.id})}" class="btn btn-warning">Edit</a> -->
+                            <a th:href="@{/admin/result/show/delete/{id}(id=${result.id})}" class="btn btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this result?')">Delete</a>
+                        </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>

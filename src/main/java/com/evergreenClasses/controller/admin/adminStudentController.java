@@ -17,6 +17,8 @@ import com.evergreenClasses.model.Batch;
 import com.evergreenClasses.model.Student;
 import com.evergreenClasses.repository.BatchRepository;
 import com.evergreenClasses.repository.StudentRepositry;
+import com.evergreenClasses.services.EmailService;
+import com.evergreenClasses.services.StudentService;
 
 @Controller
 @RequestMapping("/admin")
@@ -27,6 +29,12 @@ public class adminStudentController {
 
     @Autowired
     BatchRepository batchRepository;
+
+    @Autowired
+    StudentService studentService;
+
+    @Autowired
+    private EmailService emailService;
 
      @GetMapping("/registrations")
     public String showRegisterForm(Model model){
@@ -57,6 +65,8 @@ public class adminStudentController {
         saveStudent.setRollNo(saveStudent.getBatchYear()+saveStudent.getStudentClass()+saveStudent.getId());
         studentRepositry.save(saveStudent);
         String generatedRollNo =saveStudent.getRollNo();
+        emailService.sendStudentConfirmationEmail(saveStudent.getEmail(),saveStudent.getName(),generatedRollNo);
+
        // System.out.println("roll No : "+generatedRollNo);
 
         redirectAttributes.addFlashAttribute("rollNo",generatedRollNo);
@@ -110,7 +120,7 @@ public class adminStudentController {
         List<Student> result = studentRepositry.findByNameContainingIgnoreCase(keyword);
         if (result.isEmpty()) {
             //result=studentRepositry.findByRollNoContainingIgnoreCase(keyword).orElse(null);
-            model.addAttribute("students",studentRepositry.findByRollNoContainingIgnoreCase(keyword));
+            model.addAttribute("students",studentService.searchStudentByRollNo(keyword));
             return "student";
         }
         model.addAttribute("students", result);
