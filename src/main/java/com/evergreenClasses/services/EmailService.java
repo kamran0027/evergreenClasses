@@ -11,8 +11,10 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    public void sendStudentConfirmationEmail(String toEmail, String studentName, String rollNo) {
-        SimpleMailMessage message = new SimpleMailMessage();
+    public Boolean sendStudentConfirmationEmail(String toEmail, String studentName, String rollNo) {
+        
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(toEmail);
         message.setSubject("Evergreen Classes - Registration Confirmation");
         message.setText("Dear " + studentName + ",\n\n"
@@ -23,6 +25,12 @@ public class EmailService {
                 + "Evergreen Classes Team");
 
         mailSender.send(message);
+
+        return true;
+
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

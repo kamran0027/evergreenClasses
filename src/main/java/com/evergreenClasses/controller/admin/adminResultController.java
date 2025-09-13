@@ -45,8 +45,17 @@ public class adminResultController {
 
     @PostMapping("/result/upload")
     public String uploadResult(@ModelAttribute ResultForm resultForm, RedirectAttributes redirectAttributes ){
-        resultService.saveResult(resultForm);
-        return "redirect:/admin/result";
+        try {
+            String studentName=studentRepositry.findById(resultForm.getStudentId()).orElseThrow().getName();
+            resultService.saveResult(resultForm);
+        redirectAttributes.addFlashAttribute("message", "Result uploaded successfully!");
+        redirectAttributes.addFlashAttribute("studentName",studentName);
+        return "redirect:/admin/result?success";
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("message", "Failed to upload result. Please try again.");
+            return "redirect:/admin/result?success";
+        }
+        
     }
 
     @GetMapping("/result/show")

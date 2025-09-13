@@ -31,6 +31,8 @@
     <div th:if="${param.success}" class="alert alert-success text-center">
         <h2>✅ Registration Successfull</h2>
         <p><strong>Your roll number : </strong><span th:text="${rollNo}"></span></p>
+        <p><strong>Name : </strong><span th:text="${studentName}"></span></p>
+        <p><strong></strong><span th:text="${flag}"></span></p>
     </div>
 
     <form th:action="@{/admin/registrations}" th:object="${student}" method="post" class="row g-3">

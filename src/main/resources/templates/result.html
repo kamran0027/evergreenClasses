@@ -32,6 +32,10 @@
 
     <div class="row g-4 text-center">
 
+    <div th:if="${param.success}" class="alert alert-success text-center">
+        <h2 th:text="${message}"></h2>
+        <p><strong>Name : </strong><span th:text="${studentName}"></span></p>
+    </div>
         <!-- Upload Result -->
         <div class="col-md-3 col-sm-6">
             <a href="/admin/result/upload" class="text-decoration-none">
