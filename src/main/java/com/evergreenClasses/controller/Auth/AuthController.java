@@ -70,7 +70,8 @@ public class AuthController {
         response.addCookie(cookie);
         model.addAttribute("logout", "Thanks For Visiting");
 
-        return "redirect:/public?logout=true";
+        // return "redirect:/public?logout=true";
+        return "redirect:/public";
     }
 }
 
