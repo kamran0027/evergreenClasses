@@ -65,18 +65,19 @@ public class adminStudentController {
         saveStudent.setRollNo(saveStudent.getBatchYear()+saveStudent.getStudentClass()+saveStudent.getId());
         studentRepositry.save(saveStudent);
         String generatedRollNo =saveStudent.getRollNo();
-        Boolean flag=emailService.sendStudentConfirmationEmail(saveStudent.getEmail(),saveStudent.getName(),generatedRollNo);
+
+        //Boolean flag=emailService.sendStudentConfirmationEmail(saveStudent.getEmail(),saveStudent.getName(),generatedRollNo);
 
        // System.out.println("roll No : "+generatedRollNo);
 
         redirectAttributes.addFlashAttribute("rollNo",generatedRollNo);
         redirectAttributes.addFlashAttribute("studentName",saveStudent.getName());
-        if(flag){
-            redirectAttributes.addFlashAttribute("flag","Email sent successfully");
-        }
-        else{
-            redirectAttributes.addFlashAttribute("flag","Failed to send email");
-        }
+        // if(flag){
+        //     redirectAttributes.addFlashAttribute("flag","Email sent successfully");
+        // }
+        // else{
+        //     redirectAttributes.addFlashAttribute("flag","Failed to send email");
+        // }
 
         return "redirect:/admin/registrations?success";
     }
