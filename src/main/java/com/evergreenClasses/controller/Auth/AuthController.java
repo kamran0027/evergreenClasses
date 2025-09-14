@@ -60,7 +60,7 @@ public class AuthController {
         return "admin_home";
     }
 
-    @GetMapping("/logout")
+    @GetMapping("/custom-logout")
     public String logout(HttpServletResponse response, Model model) {
         Cookie cookie = new Cookie("jwt", null);
         cookie.setMaxAge(0);
@@ -71,7 +71,7 @@ public class AuthController {
         model.addAttribute("logout", "Thanks For Visiting");
 
         // return "redirect:/public?logout=true";
-        return "redirect:/public";
+        return "redirect:/public?logout=true";
     }
 }
 
