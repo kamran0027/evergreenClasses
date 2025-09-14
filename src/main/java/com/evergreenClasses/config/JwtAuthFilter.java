@@ -43,7 +43,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
 
         // Allow login and static resources without token
-        if (path.equals("/login") || path.equals("/logout") || path.startsWith("/css") || path.startsWith("/js") || path.startsWith("/public")) {
+        if (path.equals("/login") || 
+            path.equals("/logout") || 
+            path.startsWith("/css") || 
+            path.startsWith("/js") ||
+            path.startsWith("/images") || 
+            path.startsWith("/public")) {
             filterChain.doFilter(request, response);
             return;
         }
