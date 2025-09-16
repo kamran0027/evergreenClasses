@@ -46,6 +46,21 @@
             <span class="block sm:inline">You have been logged out.</span>
     </div>
 </h1>
+
+<!-- 👨‍🏫 Welcome Section with Faizan Sir -->
+<section class="py-5 text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-success">Welcome to Evergreen Classes</h1>
+        <p class="lead mb-4">Run by <strong>Faizan Sir</strong> - Shaping Bright Futures with Quality Education</p>
+        <!-- <div class="row justify-content-center">
+            <div class="col-md-4">
+                <img src="/images/faizan.jpg" alt="Faizan Sir" class="img-thumbnail rounded-class mb-3" style="width: 250px; height: 250px; object-fit: cover;">
+                <p class="mb-1"><strong>Join Us:</strong> +91 7079534231</p>
+            </div>
+        </div> -->
+        <a href="/public/about" class="btn btn-success btn-lg mt-3">About us</a>
+    </div>
+</section>
 <!-- 🖼️ Banner Image -->
 <div class="container-fluid p-0">
     <img src="/images/banner.jpg" alt="Evergreen Classes Banner" class="img-fluid w-100" style="max-height: 500px; object-fit: cover;">
@@ -84,6 +99,135 @@
         <a href="/public/batches" class="btn btn-success btn-lg">Explore Our Batches</a>
     </div>
 </div>
+<!-- 📸 Photo Slideshow Section -->
+<div class="container mt-5">
+    <h3 class="fw-bold text-success text-center mb-3">Our Institute in Pictures</h3>
+    <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+         <!-- 🔹 Indicator Dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/GroupPhoto1.jpg" class="d-block w-100" alt="Institute Photo 1" style="object-fit: cover;">
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/photo1.jpg" class="d-block w-100" alt="Institute Photo 2" style="object-fit: cover;">
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/photo2.jpg" class="d-block w-100" alt="Institute Photo 3" style="object-fit: cover;">
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/photo3.jpg" class="d-block w-100" alt="Institute Photo 2" style="object-fit: cover;">
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/photo4.jpg" class="d-block w-100" alt="Institute Photo 3" style="object-fit: cover;">
+                </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/photo5.jpg" class="d-block w-100" alt="Institute Photo 2" style="object-fit: cover;">
+                </div>
+            </div>
+            <!-- Slide 7 -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9">
+                    <img src="/images/photo6.jpg" class="d-block w-100" alt="Institute Photo 3" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+       <!-- 🔹 Left & Right Arrows -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon custom-arrow" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon custom-arrow" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- 🔹 Custom Arrow CSS -->
+<style>
+    /* Make the control buttons square with solid dark background */
+    .custom-btn {
+        width: 45px;
+        height: 45px;
+        background-color: #000000; /* solid black */
+        border-radius: 6px; /* small rounded corners */
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1 !important; /* always visible */
+    }
+
+    /* Arrow icons inside button */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: 60% 60%; /* shrink arrow */
+    }
+
+    /* White left arrow */
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+    }
+
+    /* White right arrow */
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    }
+</style>
+
+<!-- 🏆 Past Result Section -->
+<div class="container mt-5">
+    <h3 class="fw-bold text-success text-center mb-4">Our Past Results</h3>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <img src="/images/Result1.jpg" class="img-fluid rounded shadow" alt="image not found">
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="/images/result2.jpg" class="img-fluid rounded shadow" alt="image not found">
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="/images/result3.jpg" class="img-fluid rounded shadow" alt="image not found">
+        </div>
+    </div>
+</div>
+
+<!-- 🎥 Video Section -->
+<div class="container mt-5 text-center">
+    <h3 class="fw-bold text-success">Welcome Video</h3>
+    <div class="ratio ratio-16x9 mt-3">
+        <video autoplay muted loop controls style="object-fit: cover; width: 100%; height: 100%;">
+            <source src="/videos/Video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
 <h3 class="fw-bold text-success text-center mt-5">What Our Students Say</h3>
 <div class="row mt-4">
     <div class="col-md-4">
@@ -120,7 +264,7 @@
 </div>
 
 <!-- 👨‍🏫 Welcome Section with Faizan Sir -->
-<section class="py-5 text-center">
+<!-- <section class="py-5 text-center">
     <div class="container">
         <h1 class="display-4 fw-bold text-success">Welcome to Evergreen Classes</h1>
         <p class="lead mb-4">Run by <strong>Faizan Sir</strong> - Shaping Bright Futures with Quality Education</p>
@@ -132,7 +276,7 @@
         </div>
         <a href="/public/about" class="btn btn-success btn-lg mt-3">About us</a>
     </div>
-</section>
+</section> -->
 
 <!-- 📌 Footer -->
 <footer class="bg-success text-white text-center py-3 mt-5">

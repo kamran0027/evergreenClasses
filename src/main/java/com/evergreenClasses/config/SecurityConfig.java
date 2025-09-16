@@ -20,7 +20,7 @@ public class SecurityConfig{
         http
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/login", "/images/**","/public/**").permitAll()
+            .requestMatchers("/login", "/images/**","/videos/**","/public/**").permitAll()
             .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
